@@ -30,13 +30,28 @@ export interface User {
     worldIds: string[];
 }
 
+export interface BannerRedeem {
+    redeemId: string;
+    // Stored for display — avoids re-fetching Twitch API on each render
+    redeemName: string;
+    bannerId: string;
+}
+
 export interface World {
     // Database ID
     id: string;
+    // Display name of the world
+    name: string;
     // To which streamers this world belongs to
     streamerIds: string[];
     // max rarity
     maxRarity: number;
+    // S3 key for the world logo image
+    logoSrc?: string;
+    // S3 key for the world background image
+    backgroundSrc?: string;
+    // Twitch channel point redeem → banner mappings
+    redeems?: BannerRedeem[];
 }
 
 // Streamer Assets
