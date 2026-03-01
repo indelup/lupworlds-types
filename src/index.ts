@@ -52,6 +52,8 @@ export interface World {
     backgroundSrc?: string;
     // Twitch channel point redeem → banner mappings
     redeems?: BannerRedeem[];
+    // S3 keys for card back images, keyed by rarity (1–5)
+    cardBacks?: { [rarity: number]: string };
 }
 
 // Streamer Assets
