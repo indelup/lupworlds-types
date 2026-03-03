@@ -81,6 +81,18 @@ export interface Material {
     createdAt?: string;
 }
 
+export interface Action {
+    id: string;
+    worldId: string;
+    name: string;
+    description: string;
+    artist: string;
+    actionSrc: string;
+    backgroundSrc: string;
+    rarity: number;
+    createdAt?: string;
+}
+
 export interface Banner {
     id: string;
     worldId: string;
