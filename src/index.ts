@@ -54,6 +54,8 @@ export interface World {
     redeems?: BannerRedeem[];
     // S3 keys for card back images, keyed by rarity (1–5)
     cardBacks?: { [rarity: number]: string };
+    // Custom currencies for this world
+    currencies?: Currency[];
 }
 
 // Streamer Assets
@@ -76,6 +78,18 @@ export interface Material {
     description: string;
     artist: string;
     materialSrc: string;
+    backgroundSrc: string;
+    rarity: number;
+    createdAt?: string;
+}
+
+export interface Action {
+    id: string;
+    worldId: string;
+    name: string;
+    description: string;
+    artist: string;
+    actionSrc: string;
     backgroundSrc: string;
     rarity: number;
     createdAt?: string;
