@@ -30,6 +30,17 @@ export interface User {
     worldIds: string[];
 }
 
+export interface RecipeIngredient {
+    materialId: string;
+    quantity: number;
+}
+
+export interface Recipe {
+    ingredients: RecipeIngredient[];
+    currencyId: string;
+    currencyAmount: number;
+}
+
 export interface BannerRedeem {
     redeemId: string;
     // Stored for display — avoids re-fetching Twitch API on each render
@@ -56,6 +67,8 @@ export interface World {
     cardBacks?: { [rarity: number]: string };
     // Custom currencies for this world
     currencies?: Currency[];
+    // Crafting recipes: key = output item ID (character or action), value = recipe
+    recipes?: Record<string, Recipe>;
 }
 
 // Streamer Assets
